@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number list</title>
+</head>
+<body>
+    <script>
+        
+        let numbers = [2, 4, 5, 3, 7];
+    
+    
+        let listElement = document.createElement('ul');
+    
+        
+        numbers.forEach(function(number) {
+            var listItem = document.createElement('li');
+            listItem.textContent = number;
+            listElement.appendChild(listItem);
+        });
+    
+        
+        document.body.appendChild(listElement);
+    
+        
+        var sum = numbers.reduce(function (acc, num) {
+            return acc + num;
+        }, 0);
+    
+        
+        let sumParagraph = document.createElement('p');
+        sumParagraph.textContent = 'Sum: ' + sum;
+    
+       
+        document.body.appendChild(sumParagraph);
+    
+        
+        var equationParagraph = document.createElement('p');
+        equationParagraph.textContent = 'Equation: ' + numbers.join(' + ') + ' = ' + sum;
+    
+        document.body.appendChild(equationParagraph);
+    </script>
+    
+    </body>
+    </html>
+</body>
+</html>
